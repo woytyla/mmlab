@@ -1,0 +1,18 @@
+0400 mov si,0700
+0403 mov bx,[si]
+0405 dec bx
+0406 mov cx,[si]
+0408 dec cx
+0409 mov si,0702
+040C mov al,[si]
+040E inc si
+     cmp al,[si]
+     jna
+     xchg al,[si]
+     dec si
+     mov [si],al
+     inc si
+     loop 040C
+     dec bx
+     mov si,0700
+     jnz 0406
